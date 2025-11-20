@@ -1,32 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <title>CSS Selectors</title>
-  <link rel="stylesheet" href="./solution-style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Christa Peoples | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {font-family: "Poppins", sans-serif; margin: 0; padding: 0; background: #f5f6fa; color: #222;}
+    header {background:#0d47a1; color:white; padding:20px 40px; display:flex; justify-content:space-between; align-items:center;}
+    nav ul {display:flex; list-style:none; gap:25px; margin:0; padding:0;}
+    nav ul li a {color:white; font-weight:600; text-decoration:none;}
+    nav ul li a:hover {color:#ffca28;}
+    .container {max-width:1000px; margin:40px auto; padding:20px;}
+    h2 {color:#0d47a1; border-bottom:2px solid #e3f2fd; padding-bottom:6px;}
+    .projects {display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:20px; margin-top:30px;}
+    .card {background:white; padding:20px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,.1);}
+    .card h3 {margin-top:0; color:#1a237e;}
+    .card a {display:inline-block; margin-top:10px; background:#0d47a1; color:white; padding:8px 16px; border-radius:6px; text-decoration:none;}
+    .card a:hover {background:#1565c0;}
+    footer {text-align:center; margin:40px 0 20px; font-size:.9em; color:#777;}
+  </style>
 </head>
-
 <body>
-  <h1>CSS Selectors</h1>
-  <h2>Applying CSS to Different Parts of HTML</h2>
-  <!-- TODO 1: Set the CSS for all paragraph tags to "color: red" -->
-  <p class="note">1. The element selector targets elements based on their HTML tag name.</p>
+<header>
+  <h1>Christa Peoples Portfolio</h1>
+  <nav>
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <ol>
-    <!-- TODO 2: Set the CSS for all elements with a class of "note" to "font-size: 20px" -->
-    <li class="note" value="2">Class selectors target elements based on the value of the class attribute.</li>
+<div class="container" id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
 
-    <!-- TODO 3: Set the CSS for the element with an id of "id-selector-demo" to "color: green" -->
-    <li class="note" id="id-selector-demo" value="3">ID selectors target elements based on the value of the id
-      attribute.</li>
+    <div class="card">
+      <h3>CSS Selectors Project</h3>
+      <p>Demonstrating element, class, ID, attribute, pseudo-class & universal selectors through practical examples.</p>
+      <a href="css-selectors-project/index.html">View Project</a>
+    </div>
 
-    <!-- TODO 4: Set the CSS for the li elements that have the "value" attribute set to "4" to have "color: blue" -->
-    <li class="note" value="4">Attribute selectors target elements based on their attributes and values.</li>
+    <div class="card">
+      <h3>Birthday Invite Project</h3>
+      <p>A styled invitation page demonstrating basic layout, typography, and images with HTML & CSS.</p>
+      <a href="birthday-invite/index.html">View Project</a>
+    </div>
 
-    <!-- TODO 5: Set all elements to have "text-align: center" -->
-    <li class="note" value="5">The universal selector targets all elements.</li>
-  </ol>
+    <div class="card">
+      <h3>Movie Ranking Project</h3>
+      <p>Showcasing personal rankings using structured HTML formatting and layout organization.</p>
+      <a href="movie-ranking/index.html">View Project</a>
+    </div>
+
+    <div class="card">
+      <h3>Resume Project</h3>
+      <p>Professional online resume project with navigation, sections, styling and downloadable PDF.</p>
+      <a href="resume/index.html">View Project</a>
+    </div>
+
+  </div>
+</div>
+
+<div class="container" id="about">
+  <h2>About Me</h2>
+  <p>Full Stack Web Developer & Data Analyst passionate about clean design, automation, and meaningful tech. Currently completing my M.S. in Applied Statistics while building real-world projects to grow my technical portfolio.</p>
+</div>
+
+<div class="container" id="contact">
+  <h2>Contact</h2>
+  <p><strong>Email:</strong> christapeoples@gmail.com</p>
+  <p><strong>Phone:</strong> 217-340-3340</p>
+  <p><strong>GitHub:</strong> github.com/christapeoples</p>
+  <p><strong>LinkedIn:</strong> linkedin.com/in/om-hustleofficial</p>
+</div>
+
+<footer>
+  © 2025 Christa Peoples | Built with ❤️ using HTML & CSS
+</footer>
 </body>
-
 </html>
