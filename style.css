@@ -1,0 +1,27 @@
+body { font-family: Poppins, sans-serif; margin:0; padding:0; background:#fff; color:#111; }
+.dark-mode { background:#111; color:#fff; }
+
+header { text-align:center; padding:40px 20px; }
+.typing { font-size:2rem; font-weight:700; }
+
+.filters { display:flex; justify-content:center; gap:10px; margin:20px 0; }
+.filter-btn { padding:10px 16px; border:none; background:#000; color:#fff; border-radius:8px; cursor:pointer; }
+.filter-btn.active { background:#4CAF50; }
+
+.projects-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px; padding:20px; }
+.project-card {
+    background:#fafafa; border-radius:10px; padding:20px; text-align:center;
+    box-shadow:0 4px 14px rgba(0,0,0,0.1); animation:fade 0.6s ease forwards; opacity:0;
+}
+.dark-mode .project-card { background:#222; }
+
+/* badges */
+.badges { display:flex; flex-wrap:wrap; gap:7px; justify-content:center; margin:10px 0; }
+.badge { background:#e3f2fd; padding:6px 10px; border-radius:6px; font-size:.75rem; font-weight:600; }
+.dark-mode .badge { background:#263238; color:#ffca28; }
+
+.project-card img { width:100%; border-radius:10px; margin-bottom:10px; }
+.btn { display:inline-block; margin-top:10px; padding:10px 14px; background:#4CAF50; color:#fff; border-radius:6px; text-decoration:none; }
+
+/* animation */
+@keyframes fade { to { opacity:1; transform:translateY(0);} from { opacity:0; transform:translateY(20px);} }
