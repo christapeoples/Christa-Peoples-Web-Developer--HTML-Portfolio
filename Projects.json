@@ -1,1 +1,35 @@
+[
+  {
+    "title": "Colour Vocab Website in Spanish",
+    "description": "Interactive site that teaches Spanish color vocabulary using styled flashcards and visual UI design.",
+    "image": "Screenshot-ColourVocab.png",
+    "demo": "https://christapeoples.github.io/Colour-vocab-website-Project/",
+    "repo": "christapeoples/Colour-vocab-website-Project",
+    "badges": ["HTML", "CSS", "Responsive", "Education", "Completed"]
+  },
+  {
+    "title": "CSS Selectors Project",
+    "description": "Demonstration of element, class, ID, attribute, universal, and pseudo-class selectors with styling examples.",
+    "image": "CSS-Selectors.png",
+    "demo": "https://christapeoples.github.io/css-selectors-project/",
+    "repo": "christapeoples/css-selectors-project",
+    "badges": ["HTML", "CSS", "Selectors", "UI Styling", "Completed"]
+  },
+  {
+    "title": "Online Resume",
+    "description": "Professional online resume with clean layout, downloadable PDF, and responsive design.",
+    "image": "resume-image.png",
+    "demo": "https://christapeoples.github.io/christa-peoples-resume/",
+    "repo": "christapeoples/christa-peoples-resume",
+    "badges": ["HTML", "CSS", "Responsive", "Resume", "Completed"]
+  },
+  {
+    "title": "HTML Portfolio",
+    "description": "Personal web developer portfolio showcasing completed projects and contact details.",
+    "image": "portfolio-preview.png",
+    "demo": "https://christapeoples.github.io/Christa-Peoples-Web-Developer--HTML-Portfolio/",
+    "repo": "christapeoples/Christa-Peoples-Web-Developer--HTML-Portfolio",
+    "badges": ["HTML", "CSS", "Design", "Portfolio", "In Progress"]
+  }
+]
 
