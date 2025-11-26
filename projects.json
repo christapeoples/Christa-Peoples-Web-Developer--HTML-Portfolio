@@ -16,6 +16,22 @@
     "category": "mini"
   },
   {
+    "title": "Birthday Invite Project",
+    "description": "A custom, interactive birthday invitation webpage.",
+    "image": "birthday-invite.png",
+    "category": "web",
+    "badges": ["HTML", "CSS", "JavaScript"],
+    "url": "birthday-invite.html"
+  },
+  {
+    "title": "Movie Ranking Project",
+    "description": "A web app to rank and review movies dynamically.",
+    "image": "movie-ranking.png",
+    "category": "web",
+    "badges": ["React", "API", "CSS"],
+    "url": "movie-ranking.html"
+  },
+  {
     "title": "Christa Peoples Resume",
     "description": "Formatted resume built with clean HTML structure.",
     "url": "https://github.com/christapeoples/christa-peoples-resume",
