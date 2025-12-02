@@ -1,114 +1,400 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Christa Peoples | Front-End Web Developer</title>
-<link rel="stylesheet" href="style.css" />
+  <!-- ===== META & PRELOADS (Performance-minded) ===== -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Christa Peoples — Front-End Developer</title>
+  <meta name="description" content="Christa Peoples — Front-end developer. Portfolio, projects, resume and contact." />
+
+  <!-- Preconnect & fonts (replace font URLs if you self-host) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="style.css" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="style.css"></noscript>
+
+  <!-- Preload hero image to improve LCP -->
+  <link rel="preload" as="image" href="images/resume image.jpg">
+
+  <!-- Minimal critical CSS to avoid FOUC -->
+  <style>
+    html{box-sizing:border-box}*,*::before,*::after{box-sizing:inherit}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;background:#f4f7fb;color:#111}
+    .site-header{position:sticky;top:0;z-index:40;padding:.75rem}
+    .hero{padding:2rem 0}
+    a{color:#6c63ff}
+  </style>
+
+  <!-- Optional: replace with your own font imports -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-<header class="header">
-    <div class="intro">
-        <h1 class="typing" aria-label="Hi, I'm Christa — Front-End Web Developer">
-            Hi, I'm Christa — Front-End Web Developer
-        </h1>
-        <p class="subheading">Turning ideas into clean, modern websites.</p>
-        <button id="themeToggle" aria-pressed="false">🌙 Dark Mode</button>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- HEADER / NAV -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="images/resume image.jpg" alt="Christa Peoples - profile" class="profile-thumb" />
+        <div>
+          <a href="#" class="logo">Christa Peoples</a>
+          <p class="logo-sub">Front-End Web Developer</p>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="primaryMenu">
+          <span class="sr-only">Open menu</span>☰
+        </button>
+        <ul id="primaryMenu" class="nav-list">
+          <li><a class="nav-link" href="#hero">Home</a></li>
+          <li><a class="nav-link" href="#about">About</a></li>
+          <li><a class="nav-link" href="#projects">Projects</a></li>
+          <li><a class="nav-link" href="#css-demo">CSS Demo</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
+          <li><button id="themeToggle" class="theme-toggle" aria-pressed="false">🌙</button></li>
+        </ul>
+      </nav>
     </div>
-</header>
+  </header>
 
-<main>
-<section id="projects-section">
-    <h2>Projects</h2>
+  <!-- MAIN -->
+  <main id="main">
+    <!-- HERO -->
+    <section id="hero" class="hero container">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <h1 class="hero-title" aria-label="Hi, I'm Christa — Front-End Web Developer">
+            <span id="typed">Hi, I'm Christa — Front-End Web Developer</span>
+          </h1>
+          <p class="hero-sub">I design and build accessible, high-performance websites — focused on clarity and results.</p>
+          <div class="hero-ctas">
+            <a href="#projects" class="btn primary">View My Work</a>
+            <a href="images/resume image.jpg" download="ChristaPeoples_Resume.jpg" class="btn outline">Download Resume</a>
+          </div>
+        </div>
 
-    <!-- FILTER BUTTONS -->
-    <nav class="filters" aria-label="Project Filters">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="web">Web</button>
-        <button class="filter-btn" data-filter="resume">Resume</button>
-        <button class="filter-btn" data-filter="mini">Mini Projects</button>
-    </nav>
+        <div class="hero-visual">
+          <div class="profile-card" role="img" aria-label="Christa Peoples profile card">
+            <img src="images/resume image.jpg" alt="Christa Peoples" class="profile-large" width="176" height="176"/>
+            <div class="profile-meta">
+              <h3>Christa Peoples</h3>
+              <p>Front-End Web Developer • UI/UX-minded • Accessibility-first</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- PROJECTS CONTAINER -->
-    <div id="projects-container" class="projects-grid" aria-live="polite"></div>
-</section>
-</main>
+    <!-- ABOUT -->
+    <section id="about" class="about section container">
+      <div class="about-inner">
+        <div class="about-left">
+          <h2>About</h2>
+          <p>I build clean, maintainable front-end experiences with an accessibility-first mindset, optimized performance, and intuitive UI. I combine design sense with disciplined engineering to ship products that feel polished and perform well.</p>
 
-<script>
-// ------------------ PROJECT FETCHER ------------------
-async function loadProjects() {
-    try {
-        const response = await fetch("projects.json");
-        const projects = await response.json();
-        const container = document.getElementById("projects-container");
+          <ul class="skills-list" aria-label="Tech stack">
+            <li>HTML5 & semantic markup</li>
+            <li>CSS3 (BEM, Grid, Flexbox)</li>
+            <li>JavaScript (ES6+), React</li>
+            <li>Responsive & accessible design</li>
+            <li>Git, deployment (Netlify, Vercel)</li>
+          </ul>
+          <p class="about-cta">Open to freelance or full-time roles — <a href="#contact">get in touch</a>.</p>
+        </div>
 
-        function renderProjects(filter = "all") {
-            container.innerHTML = "";
+        <aside class="about-right" aria-hidden="false">
+          <div class="stats">
+            <div><strong>5+</strong><span>Years Experience</span></div>
+            <div><strong>20+</strong><span>Projects</span></div>
+            <div><strong>1</strong><span>Chief Kid Officer</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-            projects
-                .filter(p => filter === "all" || p.category === filter)
-                .forEach((project, index) => {
-                    const card = document.createElement("article");
-                    card.className = "project-card";
-                    card.style.animationDelay = `${index * 0.15}s`;
+    <!-- PROJECTS -->
+    <section id="projects" class="projects section container" aria-labelledby="projectsHeading">
+      <h2 id="projectsHeading">Projects</h2>
 
-                    const imageSrc = project.image || "images/default-project.png";
+      <div class="filters" role="tablist" aria-label="Project filters">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter-btn" data-filter="web" role="tab">Web</button>
+        <button class="filter-btn" data-filter="resume" role="tab">Resume</button>
+        <button class="filter-btn" data-filter="mini" role="tab">Mini Projects</button>
+      </div>
 
-                    card.innerHTML = `
-                        <img src="${imageSrc}" alt="${project.title}" onerror="this.src='images/default-project.png'" />
-                        <h3>${project.title}</h3>
-                        <p>${project.description}</p>
-                        <div class="badges">
-                            ${project.badges?.map(b => `<span class="badge">${b}</span>`).join("") || ""}
-                        </div>
-                        <a href="${project.url}" target="_blank" rel="noopener noreferrer" class="btn">View Project</a>
-                    `;
-                    container.appendChild(card);
-                });
-        }
+      <div id="projectsGrid" class="projects-grid" aria-live="polite"></div>
+    </section>
 
-        // Initial render
-        renderProjects("all");
+    <!-- CSS DEMO -->
+    <section id="css-demo" class="css-demo section container">
+      <h2>CSS Demo — Before / After</h2>
+      <p>Simple before/after using CSS and semantic markup.</p>
+      <div class="before-after">
+        <figure class="ba-figure">
+          <img src="images/before pic.png" alt="Before image" class="ba-img before" />
+          <figcaption>Before</figcaption>
+        </figure>
 
-        // FILTERS
-        document.querySelectorAll(".filter-btn").forEach(btn => {
-            btn.addEventListener("click", () => {
-                document.querySelector(".filter-btn.active").classList.remove("active");
-                btn.classList.add("active");
-                renderProjects(btn.dataset.filter);
-            });
-        });
+        <figure class="ba-figure">
+          <img src="images/after.png" alt="After image" class="ba-img after" />
+          <figcaption>After</figcaption>
+        </figure>
+      </div>
+    </section>
 
-    } catch (err) {
-        console.error("Failed to load projects:", err);
-    }
-}
+    <!-- CONTACT -->
+    <section id="contact" class="contact section container">
+      <h2>Contact</h2>
+      <p>Want to work together? Fill the form or email me — I reply fast.</p>
 
-loadProjects();
+      <div class="contact-grid">
+        <form id="contactForm" class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+          <label for="name">Name</label>
+          <input id="name" name="name" required />
 
-// ------------------ DARK MODE ------------------
-const themeToggle = document.getElementById("themeToggle");
-themeToggle.addEventListener("click", () => {
-    const isDark = document.body.classList.toggle("dark-mode");
-    themeToggle.setAttribute("aria-pressed", isDark);
-});
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
 
-// ------------------ TYPING ANIMATION ------------------
-(function typeAnimation() {
-    const typingText = document.querySelector(".typing");
-    const originalText = typingText.textContent;
-    typingText.textContent = "";
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+
+          <div class="form-actions">
+            <button type="submit" class="btn primary">Send</button>
+            <a class="btn outline" href="mailto:youremail@example.com">Email Me</a>
+          </div>
+          <p class="form-note">Tip: replace Formspree action with your endpoint or keep mailto fallback.</p>
+        </form>
+
+        <aside class="contact-info" aria-label="Contact information">
+          <h3>Contact Info</h3>
+          <p><strong>Email:</strong> <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+          <p><strong>GitHub:</strong> <a href="https://github.com" target="_blank" rel="noopener noreferrer">github.com/yourusername</a></p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Christa Peoples — Built with care.</p>
+      <div class="social">
+        <a href="#" aria-label="GitHub">GitHub</a>
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+  /* -------------------------
+     Minimal helpers
+     ------------------------- */
+  const $ = sel => document.querySelector(sel);
+  const $$ = sel => Array.from(document.querySelectorAll(sel));
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Mobile nav toggle
+  const navToggle = $('#navToggle');
+  const primaryMenu = $('#primaryMenu');
+  navToggle.addEventListener('click', () => {
+    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', String(!expanded));
+    primaryMenu.classList.toggle('open');
+  });
+
+  // Theme toggle w/ persistence
+  const themeToggle = $('#themeToggle');
+  themeToggle.addEventListener('click', () => {
+    const isDark = document.body.classList.toggle('dark-mode');
+    themeToggle.setAttribute('aria-pressed', String(isDark));
+    themeToggle.textContent = isDark ? '☀️' : '🌙';
+    localStorage.setItem('themeDark', isDark ? '1' : '0');
+  });
+  if (localStorage.getItem('themeDark') === '1') {
+    document.body.classList.add('dark-mode');
+    themeToggle.setAttribute('aria-pressed','true');
+    themeToggle.textContent = '☀️';
+  }
+
+  // Tiny accessible typing animation
+  (function typeText() {
+    const el = document.getElementById('typed');
+    const full = el.textContent;
+    el.textContent = '';
     let i = 0;
+    function step() {
+      el.textContent = full.slice(0, i);
+      i++;
+      if (i <= full.length) requestAnimationFrame(step);
+    }
+    step();
+  })();
 
-    function type() {
-        typingText.textContent += originalText.charAt(i);
-        i++;
-        if (i < originalText.length) requestAnimationFrame(type);
+  // Escape helper
+  function escapeHtml(str='') {
+    return String(str).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
+  }
+
+  /* -------------------------
+     PROJECTS: load and render with responsive <picture>
+     ------------------------- */
+  async function loadProjects() {
+    try {
+      const res = await fetch('projects.json');
+      if (!res.ok) throw new Error('projects.json not found');
+      const projects = await res.json();
+      renderProjects(projects, 'all');
+
+      // filters
+      $$('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          $$('.filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          renderProjects(projects, btn.dataset.filter);
+        });
+      });
+    } catch (err) {
+      console.error('Error loading projects:', err);
+      $('#projectsGrid').innerHTML = '<p class="error">Could not load projects. Make sure projects.json exists.</p>';
+    }
+  }
+
+  // sizes array MUST match generator sizes in image-optimize.js
+  const RESPONSIVE_SIZES = [400, 800, 1400];
+
+  function renderProjects(projects, filter) {
+    const grid = $('#projectsGrid');
+    grid.innerHTML = '';
+    const visible = projects.filter(p => filter === 'all' || (p.categories || []).includes(filter));
+
+    if (visible.length === 0) {
+      grid.innerHTML = '<p class="muted">No projects found for this filter.</p>';
+      return;
     }
 
-    type();
-})();
-</script>
+    visible.forEach((project, idx) => {
+      const card = document.createElement('article');
+      card.className = 'project-card';
+      card.style.animationDelay = `${idx * 80}ms`;
+
+      // Build picture markup when imageBase is present
+      let pictureHtml = '';
+      if (project.imageBase) {
+        const webpSrcset = RESPONSIVE_SIZES.map(w => `${project.imageBase}-${w}.webp ${w}w`).join(', ');
+        const jpgSrcset = RESPONSIVE_SIZES.map(w => `${project.imageBase}-${w}.jpg ${w}w`).join(', ');
+        const largest = `${project.imageBase}-${RESPONSIVE_SIZES[RESPONSIVE_SIZES.length-1]}.jpg`;
+        pictureHtml = `
+          <picture>
+            <source type="image/webp" srcset="${webpSrcset}" sizes="(max-width:800px) 90vw, 33vw">
+            <source type="image/jpeg" srcset="${jpgSrcset}" sizes="(max-width:800px) 90vw, 33vw">
+            <img data-src="${largest}" class="lazy" loading="lazy" alt="${escapeHtml(project.title)}" width="1200" height="675">
+          </picture>
+        `;
+      } else {
+        const fallback = project.image || 'images/default-project.png';
+        pictureHtml = `<img data-src="${fallback}" class="lazy" loading="lazy" alt="${escapeHtml(project.title)}">`;
+      }
+
+      card.innerHTML = `
+        <div class="card-media">
+          <div class="media-wrap">
+            ${pictureHtml}
+            <div class="overlay">
+              <div class="overlay-inner">
+                <h3>${escapeHtml(project.title)}</h3>
+                <p class="overlay-desc">${escapeHtml(project.description || '')}</p>
+                <div class="overlay-links">
+                  ${project.url ? `<a class="btn small" href="${project.url}" target="_blank" rel="noopener noreferrer">Live</a>` : ''}
+                  ${project.github ? `<a class="btn small outline" href="${project.github}" target="_blank" rel="noopener noreferrer">Code</a>` : ''}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="badges">${(project.badges || []).map(b => `<span class="badge">${escapeHtml(b)}</span>`).join('')}</div>
+          <p class="card-desc">${escapeHtml(project.description || '')}</p>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+
+    // Lazy load with IntersectionObserver (images)
+    const lazyImages = Array.from(document.querySelectorAll('img.lazy'));
+    const imgObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const img = entry.target;
+        const src = img.dataset.src;
+        if (src) img.src = src;
+        img.classList.remove('lazy');
+        obs.unobserve(img);
+      });
+    }, { rootMargin: '200px 0px' });
+
+    const revealObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target.closest('.project-card') || entry.target;
+        el?.classList.add('in-view');
+        obs.unobserve(entry.target);
+      });
+    }, { threshold: 0.12 });
+
+    lazyImages.forEach(img => {
+      imgObserver.observe(img);
+      revealObserver.observe(img);
+    });
+  }
+
+  loadProjects();
+
+  // Contact form UX
+  const contactForm = $('#contactForm');
+  contactForm.addEventListener('submit', (e) => {
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    setTimeout(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send';
+    }, 4000);
+  });
+
+  // Active nav highlight on scroll
+  const sections = ['#hero','#about','#projects','#css-demo','#contact'].map(s => document.querySelector(s));
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY + 120;
+    sections.forEach(s => {
+      if (!s) return;
+      const top = s.offsetTop;
+      const bottom = top + s.offsetHeight;
+      const link = document.querySelector(`a[href="#${s.id}"]`);
+      if (scrollY >= top && scrollY < bottom) {
+        $$('.nav-link').forEach(n => n.classList.remove('active'));
+        if (link) link.classList.add('active');
+      }
+    });
+  });
+  </script>
+
+  <!-- ===== PLAUSIBLE (privacy-first analytics) ===== -->
+  <!-- Replace your-domain.com with your actual domain -->
+  <script async defer data-domain="https://omhustle.com" src="https://plausible.io/js/plausible.js"></script>
+
+  <!-- ===== GA4 alternative (commented) =====
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true });
+  </script>
+  -->
+
 </body>
 </html>
