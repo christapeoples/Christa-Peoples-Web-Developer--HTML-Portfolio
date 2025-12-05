@@ -4,8 +4,6 @@
   <meta charset="UTF-8">
   <title>Christa Peoples | Front-end Web Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- SEO -->
   <meta name="description" content="Christa Peoples is a frontend developer building clean, responsive, modern web experiences. View projects, source code, and resume.">
   <meta name="author" content="Christa Peoples">
   <meta name="robots" content="index, follow">
@@ -32,7 +30,7 @@
     * { box-sizing: border-box; scroll-behavior: smooth; }
     body { margin: 0; font-family: system-ui, sans-serif; background: var(--bg); color: var(--text); transition: 0.3s; }
 
-    /* NAV */
+    /* NAVBAR */
     .navbar { position: sticky; top:0; background: var(--bg); padding: 1rem 2rem; display:flex; justify-content:center; gap:2rem; z-index:100; border-bottom:1px solid rgba(0,0,0,0.08);}
     .navbar a { text-decoration:none; font-weight:600; color:var(--text); transition:0.2s; }
     .navbar a:hover { color: var(--accent); }
@@ -44,7 +42,7 @@
     @keyframes fadeOut { to { opacity:0; visibility:hidden; } }
 
     /* HERO */
-    header { position: relative; display: flex; justify-content: center; align-items: center; flex-direction: column; text-align:center; height:100vh; color:white; background: url('YOUR-BACKGROUND-IMAGE.jpg') no-repeat center center/cover; background-attachment: fixed; }
+    header { position: relative; display: flex; justify-content: center; align-items: center; flex-direction: column; text-align:center; height:100vh; color:white; background: url('tech backgrnd.jpg') no-repeat center center/cover; background-attachment: fixed; }
     header::before { content: ''; position:absolute; inset:0; background: rgba(0,0,0,0.4); z-index:1; }
     header > div { position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; gap:1.5rem; }
     .typing { font-size:3rem; font-weight:900; }
@@ -82,6 +80,10 @@
     <source src="tech-intro.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
+  <audio id="introAudio" autoplay>
+    <source src="tech-intro.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
 </div>
 
 <nav class="navbar">
@@ -111,8 +113,9 @@
 </div>
 
 <script>
-/* INTRO VIDEO FADE */
+/* INTRO VIDEO & AUDIO */
 const introVideo = document.getElementById('introVideo');
+const introAudio = document.getElementById('introAudio');
 introVideo.onended = () => document.body.classList.add('loaded');
 
 /* TYPING ANIMATION */
