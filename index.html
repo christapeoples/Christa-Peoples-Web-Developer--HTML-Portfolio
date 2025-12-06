@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <title>Christa Peoples | Front-end Web Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Christa Peoples is a frontend developer building clean, responsive, modern web experiences. View projects, source code, and resume.">
-  <meta name="author" content="Christa Peoples">
-  <meta name="robots" content="index, follow">
 
-  <!-- Schema -->
+  <!-- SEO -->
+  <meta name="description" content="Christa Peoples is a frontend developer building clean, responsive, modern web experiences.">
+  <meta name="author" content="Christa Peoples">
+
+  <!-- SCHEMA -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -20,85 +21,176 @@
   }
   </script>
 
-  <style>
-    :root {
-      --bg: #ffffff;
-      --text: #111;
-      --accent: #6a11cb;
-    }
-    body.dark { --bg: #0e0e0e; --text: #f1f1f1; }
-    * { box-sizing: border-box; scroll-behavior: smooth; }
-    body { margin: 0; font-family: system-ui, sans-serif; background: var(--bg); color: var(--text); transition: 0.3s; }
+<style>
+:root {
+  --bg:#ffffff;
+  --text:#111;
+  --accent:#6a11cb;
+}
+* { box-sizing:border-box; scroll-behavior:smooth; }
+body { margin:0; font-family:system-ui,sans-serif; background:var(--bg); color:var(--text); }
 
-    /* NAVBAR */
-    .navbar { position: sticky; top:0; background: var(--bg); padding: 1rem 2rem; display:flex; justify-content:center; gap:2rem; z-index:100; border-bottom:1px solid rgba(0,0,0,0.08);}
-    .navbar a { text-decoration:none; font-weight:600; color:var(--text); transition:0.2s; }
-    .navbar a:hover { color: var(--accent); }
+/* INTRO VIDEO */
+#introVideoWrapper {
+  position:fixed;
+  inset:0;
+  background:black;
+  z-index:9999;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+#introVideo {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+body.loaded #introVideoWrapper {
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transition:opacity 0.8s ease;
+}
 
-    /* INTRO VIDEO */
-    #introVideoWrapper { position: fixed; inset:0; z-index:9999; background:black; display:flex; justify-content:center; align-items:center; }
-    #introVideo { width:100%; height:100%; object-fit:cover; }
-    body.loaded #introVideoWrapper { animation: fadeOut 1s forwards; animation-delay:2s; }
-    @keyframes fadeOut { to { opacity:0; visibility:hidden; } }
+/* NAV */
+.navbar {
+  position:sticky;
+  top:0;
+  background:white;
+  padding:1rem 2rem;
+  display:flex;
+  justify-content:center;
+  gap:2rem;
+  z-index:100;
+}
+.navbar a {
+  text-decoration:none;
+  font-weight:600;
+  color:#111;
+}
+.navbar a:hover { color:var(--accent); }
 
-    /* HERO */
-    header { position: relative; display: flex; justify-content: center; align-items: center; flex-direction: column; text-align:center; height:100vh; color:white; background: url('tech backgrnd.jpg') no-repeat center center/cover; background-attachment: fixed; }
-    header::before { content: ''; position:absolute; inset:0; background: rgba(0,0,0,0.4); z-index:1; }
-    header > div { position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; gap:1.5rem; }
-    .typing { font-size:3rem; font-weight:900; }
-    header p { font-size:1.2rem; opacity:0.9; }
-    .btn { display:inline-block; padding:14px 36px; border-radius:999px; border:none; background:white; color:#111; font-weight:700; cursor:pointer; margin-top:1rem; text-decoration:none; transition:0.2s;}
-    .btn:hover { transform:translateY(-3px); }
+/* HERO */
+header {
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:white;
+  background:url('tech-backgrnd.jpg') no-repeat center/cover;
+  position:relative;
+}
+header::before {
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+}
+header > div { position:relative; z-index:2; }
 
-    /* SECTIONS */
-    section { padding:6rem 2rem; max-width:1200px; margin:auto; }
-    h2 { text-align:center; font-size:2.4rem; margin-bottom:2rem; }
-    .reveal { opacity:0; transform:translateY(40px); transition:0.8s ease; }
-    .reveal.show { opacity:1; transform:translateY(0); }
+.typing { font-size:3rem; font-weight:900; }
+.btn {
+  display:inline-block;
+  padding:14px 36px;
+  border-radius:999px;
+  background:white;
+  color:black;
+  font-weight:700;
+  margin-top:1rem;
+  text-decoration:none;
+  transition:0.2s;
+}
+.btn:hover { transform:translateY(-3px); }
 
-    /* PROJECT GRID */
-    .projects-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:2rem; }
-    .project-card { position:relative; overflow:hidden; border-radius:18px; background:#111; box-shadow:0 10px 25px rgba(0,0,0,0.15); cursor:pointer; transition:0.3s; }
-    .project-card:hover { transform:translateY(-8px); }
-    .project-card img { width:100%; height:230px; object-fit:cover; transition:0.4s; }
-    .project-card:hover img { transform:scale(1.1); }
-    .project-overlay { position:absolute; inset:0; background:linear-gradient(135deg, rgba(106,17,203,.95), rgba(37,117,252,.95)); display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; opacity:0; transition:0.3s; color:white; padding:1.5rem; }
-    .project-card:hover .project-overlay { opacity:1; }
+/* SECTIONS */
+section {
+  padding:6rem 2rem;
+  max-width:1200px;
+  margin:auto;
+}
+h2 { text-align:center; font-size:2.4rem; margin-bottom:2rem; }
+.reveal { opacity:0; transform:translateY(40px); transition:0.8s; }
+.reveal.show { opacity:1; transform:translateY(0); }
 
-    /* MODAL */
-    #modal { position: fixed; inset:0; background: rgba(0,0,0,0.75); display:none; justify-content:center; align-items:center; z-index:1000; }
-    .modal-content { background: var(--bg); padding:2.5rem; max-width:520px; width:90%; border-radius:18px; text-align:center; animation:pop 0.3s ease; }
-    @keyframes pop { from {transform:scale(.8);opacity:0;} to {transform:scale(1);opacity:1;} }
-  </style>
+/* PROJECT GRID */
+.projects-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:2rem;
+}
+.project-card {
+  background:#111;
+  border-radius:18px;
+  overflow:hidden;
+  cursor:pointer;
+  transition:0.3s;
+  position:relative;
+}
+.project-card:hover { transform:translateY(-8px); }
+.project-card img {
+  width:100%;
+  height:230px;
+  object-fit:cover;
+}
+.project-overlay {
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,rgba(106,17,203,.95),rgba(37,117,252,.95));
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  text-align:center;
+  opacity:0;
+  transition:0.3s;
+}
+.project-card:hover .project-overlay { opacity:1; }
+
+/* MODAL */
+#modal {
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.75);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+}
+.modal-content {
+  background:white;
+  padding:2.5rem;
+  width:90%;
+  max-width:520px;
+  border-radius:18px;
+  text-align:center;
+}
+</style>
 </head>
 
 <body>
 
 <!-- INTRO VIDEO -->
 <div id="introVideoWrapper">
-  <video id="introVideo" autoplay muted playsinline>
-    <source src="tech-intro.mp4" type="video/mp4">
-    Your browser does not support the video tag.
+  <video id="introVideo" autoplay muted playsinline preload="auto" poster="tech-backgrnd.jpg">
+    <source src="lofi-study-calm-peaceful-chill-hop-112191.mp3" type="video/mp4">
   </video>
-  <audio id="introAudio" autoplay>
-    <source src="tech-intro.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
-  </audio>
 </div>
 
 <nav class="navbar">
-  <a href="about.html">About Me</a>
+  <a href="about.html">About</a>
   <a href="#projects">Projects</a>
-  <a href="contact.html">Contact Me</a>
+  <a href="contact.html">Contact</a>
   <a href="Christa-Peoples-Resume.pdf" download>Resume</a>
 </nav>
 
 <header>
   <div>
-    <img src="resume image.jpg" alt="Christa Peoples" style="width:160px;height:160px;border-radius:50%;object-fit:cover;border:5px solid white;box-shadow:0 10px 25px rgba(0,0,0,.3);">
-    <h1 class="typing">Hi, I'm Christa Peoples — Front-end Developer</h1>
+    <img src="resume-image.jpg" alt="Christa Peoples" style="width:160px;border-radius:50%;border:4px solid white;">
+    <h1 class="typing">Hi, I'm Christa Peoples — Front-end Web Developer</h1>
     <p>Clean code. Bold design. Real-world performance.</p>
-    <a href="#projects" class="btn">View Projects</a>
+    <a href="#projects" class="btn">View My Work</a>
   </div>
 </header>
 
@@ -107,18 +199,24 @@
   <div id="projects-container" class="projects-grid"></div>
 </section>
 
-<!-- MODAL -->
 <div id="modal">
   <div class="modal-content" id="modalContent"></div>
 </div>
 
 <script>
-/* INTRO VIDEO & AUDIO */
-const introVideo = document.getElementById('introVideo');
-const introAudio = document.getElementById('introAudio');
-introVideo.onended = () => document.body.classList.add('loaded');
+/* SAFE INTRO VIDEO */
+const video = document.getElementById("introVideo");
+window.addEventListener("load", () => {
+  if (video) {
+    video.play().catch(() => document.body.classList.add("loaded"));
+    video.onended = () => document.body.classList.add("loaded");
+    setTimeout(() => document.body.classList.add("loaded"), 6000);
+  } else {
+    document.body.classList.add("loaded");
+  }
+});
 
-/* TYPING ANIMATION */
+/* TYPING */
 const text = document.querySelector(".typing");
 const original = text.innerText;
 text.innerText = "";
@@ -133,19 +231,19 @@ let t = 0;
 /* SCROLL REVEAL */
 const reveals = document.querySelectorAll(".reveal");
 window.addEventListener("scroll", () => {
-  reveals.forEach(section => {
-    const top = section.getBoundingClientRect().top;
-    if(top < window.innerHeight - 100) section.classList.add("show");
+  reveals.forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 100)
+      el.classList.add("show");
   });
 });
 
 /* PROJECT DATA */
 const projects = [
-  { title: "Colour Vocabulary Website", image: "Spanish vocab.png", description: "Spanish color learning website.", live: "Spanish Colors Project.html", code: "https://github.com/christapeoples/Colour-vocab-website-Project" },
-  { title: "CSS Selectors Project", image: "CSS before Selectors.png", description: "Advanced CSS selectors.", live: "CSS after Selectors.png", code: "https://github.com/christapeoples/css-selectors-project" },
-  { title: "Birthday Invite", image: "birthday-invite.png", description: "Birthday invitation webpage.", live: "birthday-invite.html", code: "https://github.com/christapeoples/Christa-Peoples-Web-Developer--HTML-Portfolio" },
-  { title: "Movie Ranking", image: "Movie Ranking.png", description: "Movie ranking website.", live: "movie-ranking.html", code: "https://github.com/christapeoples/Christa-Peoples-Web-Developer--HTML-Portfolio" },
-  { title: "Professional Resume", image: "resume-image.jpg", description: "Downloadable resume.", live: "Christa-Peoples-Resume.pdf", code: "https://github.com/christapeoples/christa-peoples-resume" }
+  { title:"Colour Vocabulary Website", image:"Spanish vocab.png", description:"Spanish color learning website.", live:"Spanish Colors Project.html", code:"https://github.com/christapeoples/Colour-vocab-website-Project" },
+  { title:"CSS Selectors Project", image:"CSS before Selectors.png", description:"Advanced CSS selectors.", live:"solution.html", code:"https://github.com/christapeoples/css-selectors-project" },
+  { title:"Birthday Invite", image:"birthday-invite.png", description:"Birthday invitation webpage.", live:"birthday-invite.html", code:"https://github.com/christapeoples/Christa-Peoples-Web-Developer--HTML-Portfolio" },
+  { title:"Movie Ranking", image:"Movie Ranking.png", description:"Movie ranking site.", live:"movie-ranking.html", code:"https://github.com/christapeoples/Christa-Peoples-Web-Developer--HTML-Portfolio" },
+  { title:"Professional Resume", image:"resume image.jpg", description:"Downloadable resume.", live:"Christa-Peoples-Resume.pdf", code:"https://github.com/christapeoples/christa-peoples-resume" }
 ];
 
 /* RENDER PROJECTS */
@@ -154,14 +252,14 @@ projects.forEach(p => {
   const card = document.createElement("div");
   card.className = "project-card";
   card.innerHTML = `
-    <img src="${p.image}" onerror="this.src='images/original/default-project.png'">
+    <img src="${p.image}">
     <div class="project-overlay">
       <h3>${p.title}</h3>
       <p>${p.description}</p>
-      <p>Click to view</p>
+      <p>Click to View</p>
     </div>
   `;
-  card.addEventListener("click", () => openModal(p));
+  card.onclick = () => openModal(p);
   container.appendChild(card);
 });
 
@@ -172,16 +270,15 @@ function openModal(project) {
   modalContent.innerHTML = `
     <h2>${project.title}</h2>
     <p>${project.description}</p>
-    <div style="margin-top:1.5rem; display:flex; gap:1rem; justify-content:center;">
-      <a class="btn" href="${project.live}" target="_blank">Live Demo</a>
-      <a class="btn" href="${project.code}" target="_blank">View Code</a>
+    <div style="margin-top:1rem;">
+      <a class="btn" href="${project.live}" target="_blank">Live</a>
+      <a class="btn" href="${project.code}" target="_blank">Code</a>
     </div>
-    <br>
-    <button class="btn" onclick="closeModal()">Close</button>
+    <br><br>
+    <button class="btn" onclick="modal.style.display='none'">Close</button>
   `;
   modal.style.display = "flex";
 }
-function closeModal() { modal.style.display = "none"; }
 </script>
 
 </body>
