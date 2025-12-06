@@ -195,7 +195,7 @@ h2{text-align:center;font-size:2.5rem;margin-bottom:2rem;}
   text-align:center;
 }
 
-/* ✅ SPANISH COLOR PROJECT CSS (SCOPED SAFELY) */
+/* ✅ SPANISH COLOR PROJECT CSS */
 #spanish-project img{height:200px;width:200px;}
 #spanish-project .color-title{font-weight:normal;}
 #spanish-project #red{color:red;}
@@ -269,11 +269,11 @@ window.addEventListener("scroll",()=>{
 
 /* PROJECT DATA */
 const projects=[
-{title:"Colour Vocabulary Website",image:"Spanish vocab.png",description:"Spanish color learning website.",live:"Spanish Colors Project.html",code:"https://github.com/christapeoples/Colour-vocab-website-Project",badges:["Completed","Beginner","HTML","CSS"]},
-{title:"CSS Selectors Project",image:"CSS before Selectors.png",description:"Advanced CSS selectors.",live:"solution.html",code:"https://github.com/christapeoples/css-selectors-project",badges:["Completed","Beginner","CSS"]},
-{title:"Birthday Invite",image:"birthday-invite.png",description:"Birthday invitation webpage.",live:"birthday-invite.html",code:"https://christapeoples.github.io/Birthday-Invitation-Project/",badges:["Completed","HTML","CSS"]},
-{title:"Movie Ranking",image:"Movie Ranking.png",description:"Movie ranking site.",live:"movie-ranking index.html",code:"https://github.com/christapeoples/Movie-Ranking-Project",badges:["Completed","HTML"]},
-{title:"Professional Resume",image:"resume image.jpg",description:"Downloadable resume.",live:"Christa-Peoples-Resume.pdf",code:"https://github.com/christapeoples/christa-peoples-resume",badges:["Completed","Beginner","HTML","CSS"]}
+{title:"Colour Vocabulary Website",image:"Spanish vocab.png",description:"Spanish color learning website.",live:"Spanish Colors Project.html",code:"https://github.com/christapeoples/Colour-vocab-website-Project",badges:["completed","beginner","html","css"]},
+{title:"CSS Selectors Project",image:"CSS before Selectors.png",description:"Advanced CSS selectors.",live:"solution.html",code:"https://github.com/christapeoples/css-selectors-project",badges:["completed","css"]},
+{title:"Birthday Invite",image:"birthday-invite.png",description:"Birthday invitation webpage.",live:"birthday-invite.html",code:"https://christapeoples.github.io/Birthday-Invitation-Project/",badges:["completed","html","css"]},
+{title:"Movie Ranking",image:"movie-ranking.png",description:"Movie ranking site.",live:"movie-ranking index.html",code:"https://github.com/christapeoples/Movie-Ranking-Project",badges:["completed","html"]},
+{title:"Professional Resume",image:"resume image.jpg",description:"Downloadable resume.",live:"Christa-Peoples-Resume.pdf",code:"https://github.com/christapeoples/christa-peoples-resume",badges:["completed","beginner","html","css"]}
 ];
 
 /* RENDER */
@@ -299,7 +299,7 @@ const modal=document.getElementById("modal");
 const modalContent=document.getElementById("modalContent");
 
 function openModal(project){
- const badges=project.badges.map(b=>`<span class="badge ${b.toLowerCase()}">${b}</span>`).join("");
+ const badges=project.badges.map(b=>`<span class="badge ${b}">${b}</span>`).join("");
  modalContent.innerHTML=`
  <h2>${project.title}</h2>
  <p>${project.description}</p>
