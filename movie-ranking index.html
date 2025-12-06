@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Top 3 Favorite Movies of All Time — Christa Peoples</title>
+  <meta name="description" content="Christa Peoples' top movies: Set It Off, Waiting to Exhale, Irreversible — reviews, cast, directors and why they matter." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa6bb;
+      --accent:#ff7a59;
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background: linear-gradient(180deg,#071025 0%, #0f1724 100%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:36px;
+    }
+
+    .wrap{
+      max-width:980px;
+      margin:0 auto;
+    }
+
+    header{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      margin-bottom:28px;
+    }
+    .logo{
+      width:84px;
+      height:84px;
+      border-radius:12px;
+      background:linear-gradient(135deg,#122235,#16324a);
+      display:grid;
+      place-items:center;
+      font-weight:700;
+      color:var(--accent);
+      font-size:20px;
+      box-shadow:0 6px 24px rgba(0,0,0,0.6);
+      flex-shrink:0;
+    }
+    header h1{
+      margin:0;
+      font-size:20px;
+      letter-spacing:0.2px;
+    }
+    header p{
+      margin:4px 0 0 0;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .intro{
+      background:var(--glass);
+      padding:18px;
+      border-radius:12px;
+      margin-bottom:22px;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap:18px;
+    }
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius);
+      padding:14px;
+      border:1px solid rgba(255,255,255,0.03);
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+
+    .poster{
+      width:120px;
+      min-width:120px;
+      height:180px;
+      object-fit:cover;
+      border-radius:10px;
+      background:#08121a;
+      box-shadow:0 10px 30px rgba(2,6,23,0.6);
+      flex-shrink:0;
+    }
+
+    .meta{
+      flex:1;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+    .movie-title{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:center;
+    }
+    .movie-title h2{
+      margin:0;
+      font-size:16px;
+      letter-spacing:0.2px;
+    }
+    .movie-title .year{
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .small{
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .why{
+      margin-top:6px;
+      color:#d8e6fb;
+      font-size:14px;
+    }
+
+    .more{
+      margin-top:8px;
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+    button.toggle{
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.06);
+      color:var(--accent);
+      padding:7px 10px;
+      border-radius:10px;
+      cursor:pointer;
+      font-weight:600;
+      font-size:13px;
+    }
+
+    .detail{
+      margin-top:10px;
+      padding:10px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
+      border-radius:8px;
+      border:1px solid rgba(255,255,255,0.02);
+      color:var(--muted);
+      font-size:13px;
+      display:none;
+    }
+
+    footer{
+      margin-top:28px;
+      color:var(--muted);
+      font-size:13px;
+      text-align:center;
+    }
+
+    @media (max-width:520px){
+      .poster{ width:92px; height:138px; min-width:92px }
+      header{ gap:12px }
+      .logo{ width:64px; height:64px; font-size:16px }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">CP</div>
+      <div>
+        <h1>Top Movies of All Time — Christa Peoples</h1>
+        <p>My Top 3 Movies — personal picks, short notes and why they matter.</p>
+      </div>
+    </header>
+
+    <div class="intro">
+      <strong>My Top 3 Movies!</strong>
+      <p class="small" style="margin-top:8px">
+        These picks reflect a mix of emotional depth, cultural significance, and personal impact. Click "Read more" on any movie to see full notes. Want a top 10, posters, or short reviews for each film? Replace poster placeholders with real images and I can help expand.
+      </p>
+    </div>
+
+    <section class="grid" aria-label="Top movies list">
+
+      <!-- Movie 1 -->
+      <article class="card" id="setitoff">
+        <img class="poster" src="C:\Users\chris\Downloads\Set it off.png" alt="Poster: Set It Off (1996)">
+        <div class="meta">
+          <div class="movie-title">
+            <h2>Set It Off <span class="year">— 1996</span></h2>
+            <div class="small">Director: F. Gary Gray</div>
+          </div>
+
+          <div class="small">Main cast: Jada Pinkett Smith, Queen Latifah, Vivica A. Fox, Kimberly Elise</div>
+
+          <p class="why"><strong>Why it matters:</strong> Deep emotional performances and a focus on sisterhood make this more than a crime movie — it's a character study about resilience and sacrifice. Favorite scenes include the planning sequences that reveal each woman's personality and the climactic moments where loyalty is tested. The soundtrack and pacing keep the energy high while scenes of quiet vulnerability give the story heart.</p>
+
+          <div class="more">
+            <button class="toggle" data-target="d-setitoff" aria-expanded="false">Read more</button>
+            <span class="small">Pulse-pounding action + tender friendship</span>
+          </div>
+
+          <div id="d-setitoff" class="detail" role="region" aria-hidden="true">
+            <p><strong>Summary:</strong> A powerful heist drama that centers on four women pushed to the edge by economic injustice. The film blends pulse-pounding action with tender moments of friendship and loyalty, exploring how desperation, love, and moral choices reshape lives.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Movie 2 -->
+      <article class="card" id="waitingtoexhale">
+        <img class="poster" src="C:\Users\chris\OneDrive\Pictures\waiting 2 exhale.png" alt="Poster: Waiting to Exhale (1995)">
+        <div class="meta">
+          <div class="movie-title">
+            <h2>Waiting to Exhale <span class="year">— 1995</span></h2>
+            <div class="small">Director: Forest Whitaker</div>
+          </div>
+
+          <div class="small">Main cast: Whitney Houston, Angela Bassett, Loretta Devine, Lela Rochon</div>
+
+          <p class="why"><strong>Why it matters:</strong> The film highlights emotional authenticity and the power of community, resonating through relatable struggles and joyful triumphs. Memorable for its music, candid dialogue, and the way it centers women's experiences without reducing them to stereotypes — a warm, honest portrait of friendship.</p>
+
+          <div class="more">
+            <button class="toggle" data-target="d-waiting" aria-expanded="false">Read more</button>
+            <span class="small">A celebration of friendship and real conversations</span>
+          </div>
+
+          <div id="d-waiting" class="detail" role="region" aria-hidden="true">
+            <p><strong>Summary:</strong> A heartfelt ensemble drama about four Black women navigating love, career, and self-worth. It's a celebration of real friendship, honest conversations about relationships, and the small moments that build lasting bonds.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Movie 3 -->
+      <article class="card" id="irreversible">
+        <img class="poster" src="C:\Users\chris\OneDrive\Pictures\irreversible.jpg" alt="Poster: Irreversible (2002)">
+        <div class="meta">
+          <div class="movie-title">
+            <h2>Irreversible <span class="year">— 2002</span></h2>
+            <div class="small">Director: Gaspar Noé</div>
+          </div>
+
+          <div class="small">Main cast: Monica Bellucci, Vincent Cassel, Albert Dupontel</div>
+
+          <p class="why"><strong>Why it matters:</strong> Technically daring and emotionally challenging, the film provokes strong reactions and sparks conversations about memory, fate, and retribution. Not for everyone — its unsettling imagery and structure are intentional, designed to make the audience reflect on cause and effect in ways conventional storytelling often avoids.</p>
+
+          <div class="more">
+            <button class="toggle" data-target="d-irreversible" aria-expanded="false">Read more</button>
+            <span class="small">Visceral, experimental, conversation-sparking</span>
+          </div>
+
+          <div id="d-irreversible" class="detail" role="region" aria-hidden="true">
+            <p><strong>Summary:</strong> A visceral and controversial French film that experiments with narrative structure and time. Told in reverse chronological order, it forces the viewer to confront the consequences of violence and the fragility of human life.</p>
+          </div>
+        </div>
+      </article>
+
+    </section>
+    <footer>
+      &copy; 2024 Christa Peoples. All rights reserved.
+    </footer>
+    
+  </div>
+
+  <script>
+    // Simple toggle for "Read more" sections
+    document.querySelectorAll('button.toggle').forEach(btn=>{
+      btn.addEventListener('click', ()=> {
+        const id = btn.getAttribute('data-target');
+        const el = document.getElementById(id);
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        if(expanded){
+          el.style.display = 'none';
+          btn.setAttribute('aria-expanded','false');
+          el.setAttribute('aria-hidden','true');
+          btn.textContent = 'Read more';
+        } else {
+          el.style.display = 'block';
+          btn.setAttribute('aria-expanded','true');
+          el.setAttribute('aria-hidden','false');
+          btn.textContent = 'Show less';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
