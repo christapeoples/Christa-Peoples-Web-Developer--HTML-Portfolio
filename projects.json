@@ -3,7 +3,7 @@
     "title": "Colour Vocab Website",
     "description": "Spanish color vocabulary site for language learners.",
     "url": "https://github.com/christapeoples/Colour-vocab-website-Project",
-    "image": "images/colors.png",
+    "image": "Spansih vocab.png",
     "badges": ["HTML", "CSS", "Beginner", "Completed"],
     "category": "web"
   },
@@ -11,7 +11,7 @@
     "title": "CSS Selectors Mini Project",
     "description": "Demonstrates advanced CSS selectors for styling precision.",
     "url": "https://github.com/christapeoples/css-selectors-project",
-    "image": "images/css.png",
+    "image": "after.png",
     "badges": ["CSS", "Selectors", "Mini", "Completed"],
     "category": "mini"
   },
@@ -35,7 +35,7 @@
     "title": "Christa Peoples Resume",
     "description": "Formatted resume built with clean HTML structure.",
     "url": "https://github.com/christapeoples/christa-peoples-resume",
-    "image": "images/resume.png",
+    "image": "resume image.jpg",
     "badges": ["HTML", "Layout", "Resume", "Completed"],
     "category": "resume"
   },
@@ -43,7 +43,6 @@
     "title": "HTML Portfolio",
     "description": "My first hands-on website portfolio built from scratch.",
     "url": "https://github.com/christapeoples/Christa-Peoples-Web-Developer--HTML-Portfolio",
-    "image": "images/portfolio.png",
     "badges": ["HTML", "CSS", "Responsive", "Completed"],
     "category": "web"
   }
